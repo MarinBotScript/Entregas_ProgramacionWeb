@@ -1,5 +1,385 @@
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: rgb(78, 211, 245);
+}
+html, body {
+    overflow-x: hidden;
+}
+/* ajuste seccion imagen de fondo y nombre de la universidad */
+.hero-section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ajuste de la imagen y el logo */
+.logo-section .panoramic-image {
+    height: 92vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* ajuste de la imagen */
+.panoramic-image {
+    display: block;
+}
+
+/* ajuste del titulo */
+.title-text {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 70px;
+}
+
+/* ajuste de la barra baja */
+.explore-more {
+    height: 8vh;
+    width: 100vw;
+    font-size: 30px;
+    font-family: "Verdana", "Geneva", sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a4929;
+    color: aliceblue;
+}
+
+/* ajuste de la seccion mision */
+#mision {
+    height: 100vh;
+    width: 100vw;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ajuste del titulo de la mision de la u */
+.mision-title {
+    width: 60%;
+    font-size: 55px;
+    font-family: "Verdana", "Geneva", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* ajuste de la barra delgada bajo el titulo */
+.mision-line {
+    border: none;
+    height: 3px;
+    background-color: black;
+    width: 70%;
+    margin-bottom: 35px;
+}
+
+/* ajuste del texto que es la descripcion de la mision */
+.mision-text {
+    max-width: 95%;
+    font-family: "Verdana", "Geneva", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* ajuste del boton que dice más de la udla */
+.more-udla {
+    height: 10vh;
+    width: 30vw;
+    font-size: 20px;
+    font-family: "Verdana", "Geneva", sans-serif;
+    background-color: #326740;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ajuste de que se ponga oscuro al pasar el cursor */
+.more-udla:hover {
+    background-color: #1a4929;
+}
+
+/* ajusar la seccion de noticias y eventos */
+.news-events {
+    height: 100vh;
+    width: 100vw;
+    background-color: #e4e4e4;
+    display: flex;
+    gap: 5vh;
+    padding-top: 17px;
+}
+
+/* tamaño de la seccion de noticias */
+.news {
+    height: 100vh;
+    width: 70vw;
+}
+
+/* tamaño de la parte superior de la seccion de noticias */
+.news-top {
+    height: 10%;
+    width: 70%;
+    display: flex;
+    gap: 20px;
+    padding-left: 4%;
+}
+
+/* titulo ultimas noticias */
+.title-news {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* seccion ver mas noticias */
+.more-news {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a4929;
+    text-decoration: none;
+}
+
+/* linea inferior al pasar el cursor */
+.more-news:hover {
+    text-decoration: underline;
+    color: #1a4929;
+}
+
+/* apartado del plano de las noticias */
+.news-plane {
+    height: 90%;
+    width: 100%;
+    padding-left: 4%;
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "new-1 new-2 new-3"
+        "new-1 new-4 new-5";
+    grid-template-rows: 40vh 40vh;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* asignacion de posiciones a las noticias */
+.vertical-new {
+    grid-area: new-1;
+}
+
+.new-2 {
+    grid-area: new-2;
+}
+
+.new-3 {
+    grid-area: new-3;
+}
+
+.new-4 {
+    grid-area: new-4;
+}
+
+.new-5 {
+    grid-area: new-5;
+}
+
+/* le damos a la clase new el 100% de cada seccion asignada */
+.new {
+    width: 100%;
+    height: 100%;
+}
+
+/* acomodamos las noticias */
+.news .new {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+/* animacion con el cursor encima */
+.news .new:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imágenes ocupan la mitad superior */
+.news .new .new-image {
+    width: 100%;
+    height: 50%;
+    /* object-fit: cover; */
+    /* para que las imagenes se ajusten a la caja */
+}
+
+/* Descripción ocupa la mitad inferior */
+.description {
+    height: 50%;
+    padding: 15px;
+    font-family: sans-serif;
+    gap: 17px;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-description {
+    height: 70%;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Títulos dentro de cada noticia */
+.new-title {
+    height: 25%;
+    font-size: 21px;
+    font-family: sans-serif;
+    color: black;
+}
+
+/* para que en la noticia vertical el titulo no tome tanto espacio */
+.vertical-new .new-title {
+    height: 10%;
+    font-size: 25px;
+}
+
+/* seccion eventos a la derecha de noticias */
+.events {
+    height: 100%;
+    width: 30%;
+}
+
+/* tamaño de la parte superior de la seccion de eventos */
+.events-top {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+/* titulo ultimas eventos */
+.title-events {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/* seccion ver mas eventos */
+.more-events {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a4929;
+    text-decoration: none;
+}
+
+/* linea inferior al pasar el cursor */
+.more-events:hover {
+    text-decoration: underline;
+    color: #1a4929;
+}
+
+/* plano de eventos */
+.events-plane {
+    height: 90%;
+    width: 100%;
+}
+
+/* tamaño y dispocicion de cada evento */
+.event-chart {
+    display: flex;
+    height: 30%;
+    width: 100%;
+    gap: 2%;
+}
+
+/* parte izquierda del bloque de cada evento */
+.left-event {
+    height: 100%;
+    width: 15%;
+    line-height: 1.2;
+}
+
+/* fecha completa a la izquierda */
+.event-date {
+    height: 33%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #F8F8F8;
+    background-color: #1a4929;
+}
+
+/* configuracion del numero individualmente */
+.day {
+    font-size: 30px;
+}
+
+/* parte derecha del bloque de cada evento */
+.right-event {
+    height: 100%;
+    width: 85%;
+    font-family: sans-serif;
+}
+/* titulo del evento en la parte derecha */
+.event-title{
+    height: 50%;
+    width: 90%;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.event-title:hover{
+    color: #326740;
+}
+/* descripcion del evento en la parte derecha */
+.event-description{
+    height: 50%;
+    width: 88%;
+    font-size: 17px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.discover{
+    height: 100vh;
+    width: 100vw;
+    background-color: #F8F8F8;
 }
